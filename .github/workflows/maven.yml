@@ -24,7 +24,11 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
-
+    # - name: Run Super-Linter
+    #     uses: github/super-linter@v4
+    #     env:
+    #       DEFAULT_BRANCH: main
+    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
